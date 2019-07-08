@@ -3,7 +3,10 @@
 pipeline {
 
     agent { 
-        dockerfile true
+        dockerfile {
+            label 'nginx-curl-dika'
+            args '-u root'
+        }
 //        docker {
 //            image 'nginx'
 //            args '-u root'
