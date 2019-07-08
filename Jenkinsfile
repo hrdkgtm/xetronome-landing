@@ -14,13 +14,14 @@ pipeline {
             steps {
                 echo 'Building...'
                 sh 'apt -y update && apt -y install curl'
-                sh 'cp -rf ./* /usr/share/nginx/html'
+                sh 'cp -rf . /usr/share/nginx/html'
+
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'curl http://localhost'
+                sh 'curl localhost'
             }
         }
     }
