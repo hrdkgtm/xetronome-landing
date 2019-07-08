@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'curl -I http://localhost 2>/dev/null | head -n 1'
+                sh 'curl http://localhost'
             }
         }
     }
