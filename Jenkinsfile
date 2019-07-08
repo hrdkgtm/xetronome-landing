@@ -4,7 +4,8 @@ pipeline {
 
     agent {
         docker {
-            image 'nginx:latest'
+            image 'nginx'
+            args '-u root'
         }
     }
 
@@ -14,7 +15,7 @@ pipeline {
                 echo 'Building...'
                 sh 'apt -y update && apt -y install curl'
                 sh 'cp -rf www/* /usr/share/nginx/html'
-                sh 'ls -al /usr/share/nginx/html'
+                sh 'sleep 60'
             }
         }
         stage('Test') {
