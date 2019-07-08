@@ -1,13 +1,14 @@
 #!/usr/bin/env groovy
 
-pipeline { dockerfile true }
+pipeline {
 
-//    agent {
+    agent { 
+        dockerfile true
 //        docker {
 //            image 'nginx'
 //            args '-u root'
 //        }
-//    }
+    }
 
     stages {
         stage('Build') {
