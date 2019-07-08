@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker {
             image 'nginx'
-            args '-u root -v .:/usr/share/nginx/html:ro'
+            args '-u root -v ${pwd}:/usr/share/nginx/html:ro'
         }
     }
 
