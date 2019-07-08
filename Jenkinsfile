@@ -16,13 +16,12 @@ pipeline {
                 sh 'apt -y update && apt -y install curl'
                 sh 'cp -rf www/* /usr/share/nginx/html'
                 sh 'ls -al /usr/share/nginx/html'
-                sh 'curl localhost'
-
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
+                sh 'curl localhost'
             }
         }
     }
