@@ -1,13 +1,13 @@
 #!/usr/bin/env groovy
 
-pipeline {
+pipeline { dockerfile true }
 
-    agent {
-        docker {
-            image 'nginx'
-            args '-u root'
-        }
-    }
+//    agent {
+//        docker {
+//            image 'nginx'
+//            args '-u root'
+//        }
+//    }
 
     stages {
         stage('Build') {
@@ -32,7 +32,7 @@ pipeline {
         stage('Deploy to Production'){
             steps{
                 echo 'Deploying to production'
-                
+
             }
         }
     }
