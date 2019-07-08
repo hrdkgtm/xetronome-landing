@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'rm -rf /var/www/html && cp -rf . /var/www/html'
+                sh 'cp -rf . /var/www/html'
             }
         }
         stage('Test') {
