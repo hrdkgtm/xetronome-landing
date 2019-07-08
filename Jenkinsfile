@@ -4,8 +4,7 @@ pipeline {
 
     agent {
         docker {
-            image 'nginx'
-            args '-u root'
+            image 'nginx:latest'
         }
     }
 
