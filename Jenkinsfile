@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'yum -y install curl || apt -y install curl'
+                sh 'apt -y update && apt -y install curl'
                 sh 'cp -rf ./* /usr/share/nginx/html'
             }
         }
