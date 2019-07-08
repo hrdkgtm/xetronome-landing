@@ -13,8 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'git clone https://github.com/hrdkgtm/xetronome-landing.git'
-                sh 'rm -rf /var/www/html && cp -rf xetronome-landing /var/www/html'
+                sh 'rm -rf /var/www/html && cp -rf . /var/www/html'
             }
         }
         stage('Test') {
