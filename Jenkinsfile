@@ -4,7 +4,7 @@ pipeline {
 
     agent { 
         dockerfile {
-            args '-u root -t nginx-curl-dika:v0.1.0'
+            args '-u root'
         }
 //        docker {
 //            image 'nginx'
