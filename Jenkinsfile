@@ -15,7 +15,7 @@ pipeline {
                 echo 'Building...'
                 sh 'apt -y update && apt -y install curl'
                 sh 'cp -rf www/* /usr/share/nginx/html'
-                sh 'sleep 60'
+                sh 'nginx'
             }
         }
         stage('Test') {
