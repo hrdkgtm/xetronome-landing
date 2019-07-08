@@ -5,11 +5,17 @@ pipeline {
     agent {
         docker {
             image 'nginx'
-            args '-u root -v ${pwd}:/usr/share/nginx/html:ro'
+            args '-u root'
         }
     }
 
     stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'cp -rf ./* /usr/share/nginx/html'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing...'
