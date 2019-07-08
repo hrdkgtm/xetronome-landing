@@ -13,7 +13,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'cp -rf . /var/www/html'
+                sh 'ls -al /var/lib/www'
+                sh 'cp -rf . /var/lib/www/html'
             }
         }
         stage('Test') {
