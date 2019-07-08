@@ -15,7 +15,7 @@ pipeline {
                 echo 'Building...'
                 sh 'apt -y update && apt -y install curl'
                 sh 'cp -rf . /usr/share/nginx/html'
-
+                sh 'ls -al /usr/share/nginx/html'
             }
         }
         stage('Test') {
