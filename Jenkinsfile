@@ -13,7 +13,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'apt -y update && apt -y install curl'
                 sh 'cp -rf www/* /usr/share/nginx/html'
                 sh 'nginx'
             }
@@ -22,6 +21,18 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sh 'curl localhost'
+            }
+        }
+        stage('Deploy to staging'){
+            steps {
+                echo 'Deploying to staging'
+
+            }
+        }
+        stage('Deploy to Production'){
+            steps{
+                echo 'Deploying to production'
+                
             }
         }
     }
